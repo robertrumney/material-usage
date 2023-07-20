@@ -36,7 +36,10 @@ public class MaterialUsageWindow : EditorWindow
         pingMeshes = EditorGUILayout.Toggle("Ping Meshes", pingMeshes);
 
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
-        foreach (KeyValuePair<Material, List<MeshRenderer>> entry in materialUsage)
+        
+        var sortedMaterialUsage = materialUsage.OrderBy(x => x.Value.Count).ToList();
+        
+        foreach (KeyValuePair<Material, List<MeshRenderer>> entry in sortedMaterialUsage)
         {
             int count = entry.Value.Count;
 

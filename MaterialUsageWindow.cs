@@ -1,16 +1,19 @@
 using UnityEngine;
 using UnityEditor;
-using System.Collections.Generic;
+
 using System.Linq;
+using System.Collections.Generic;
 
 public class MaterialUsageWindow : EditorWindow
 {
     private Vector2 scrollPos;
     private Dictionary<Material, List<MeshRenderer>> materialUsage = new Dictionary<Material, List<MeshRenderer>>();
+
     private int totalMaterialsUsed;
     private int totalMeshRenderers;
     private int totalMaterialsCounted;
     private int usageThreshold = 20;
+
     private bool limitCount = false;
     private bool pingMeshes = false;
 
@@ -20,7 +23,7 @@ public class MaterialUsageWindow : EditorWindow
         GetWindow<MaterialUsageWindow>("Material Usage");
     }
 
-    void OnGUI()
+    private void OnGUI()
     {
         if (GUILayout.Button("Get Material Usage"))
         {
@@ -36,9 +39,9 @@ public class MaterialUsageWindow : EditorWindow
         pingMeshes = EditorGUILayout.Toggle("Ping Meshes", pingMeshes);
 
         scrollPos = EditorGUILayout.BeginScrollView(scrollPos, false, false);
-        
+
         var sortedMaterialUsage = materialUsage.OrderBy(x => x.Value.Count).ToList();
-        
+
         foreach (KeyValuePair<Material, List<MeshRenderer>> entry in sortedMaterialUsage)
         {
             int count = entry.Value.Count;
@@ -58,7 +61,7 @@ public class MaterialUsageWindow : EditorWindow
         EditorGUILayout.EndScrollView();
     }
 
-    void GetMaterialUsage()
+    private void GetMaterialUsage()
     {
         materialUsage.Clear();
         totalMeshRenderers = 0;

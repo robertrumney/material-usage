@@ -26,7 +26,7 @@ You can adjust the "Usage Threshold" to limit the display and count of materials
 
 ## Contributing
 
-We welcome contributions to the Unity Material Usage Analyzer. Please feel free to submit issues and pull requests.
+Please feel free to fork, raise issues, or submit pull requests. All feedback or contributions are appreciated.
 
 ## License
 

@@ -22,7 +22,7 @@ To use Unity Material Usage Analyzer, follow these steps:
 4. Select the "Material Usage" option to open the Unity Material Usage Analyzer window.
 5. With the Material Usage window open, you can click the "Get Material Usage" button to analyze the current scene and update the material usage information.
 
-You can adjust the "Usage Threshold" to limit the display and count of materials to those used a certain number of times or less. Tick the "Limit Count" checkbox to enable this feature. If the "Ping Meshes" checkbox is enabled, a second column will appear in the list providing a reference to one of the MeshRenderers using each material.
+You can adjust the "Usage Threshold" to limit the display and count of materials to those used a certain number of times or less. Tick the "Limit Count" checkbox to enable this feature. If the "Ping Meshes" checkbox is enabled, a second column will appear in the list providing a reference to one of the MeshRenderers using each material. This can be used to located a mesh using the material for reference.
 
 ## Contributing
 
